@@ -1,0 +1,34 @@
+{
+  "name": "bamalytics",
+  "version": "0.0.1",
+  "contributors": [
+    {
+      "name": "Pete Mertz",
+      "email": "peter.s.mertz@gmail.com"
+    }
+  ],
+  "main": "app.js",
+  "scripts": {
+    "start": "grunt run"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "body-parser": "^1.6.6",
+    "multer": "0.1.6",
+    "chai": "^1.9.1",
+    "express": "4.10.6",
+    "redis": "^0.12.1",
+    "petemertz-express-validator": "*",
+    "underscore": "*",
+    "uuid": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "grunt": "^0.4.5",
+    "grunt-concurrent": "^0.5.0",
+    "grunt-nodemon": "^0.3.0"
+  }
+}

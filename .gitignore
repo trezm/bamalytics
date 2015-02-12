@@ -1,0 +1,7 @@
+# Ignore everything created by emacs as a backup
+*~
+
+# Don't unecessarily add the node modules to the repo
+node_modules/
+dist/
+*.rdp

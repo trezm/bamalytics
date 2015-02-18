@@ -1,0 +1,19 @@
+<div class="menu" ng-controller="MenuBarController">
+  <div style="display: inline-block">
+    <a href='/'>
+      BootsolesJS
+    </a>
+  </div>
+  <ul class="menu_dropdown">
+    <li ng-hide="isLoggedIn()">
+      <a href='#'>
+	Login
+      </a>
+		</li>
+    <li ng-show="isLoggedIn()">
+      <a href='#'>
+	Logout
+      </a>
+    </li>
+  </ul>		
+</div>

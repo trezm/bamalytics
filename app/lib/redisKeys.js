@@ -1,17 +1,19 @@
+var settings = require('../../settings');
+
 var redisKeyForKey = function(key) {
-	return key;
+	return settings.REDIS_PREFIX + ":" + key;
 }
 
 var redisKeyForIdentifier = function(key, identifier) {
-	return key + ':' + identifier;
+	return settings.REDIS_PREFIX + ":" + key + ':' + identifier;
 }
 
 var redisKeyForFieldAndValue = function(key, identifier, field, value) {
-	return key + ':' + identifier + ':' + field + ':' + value;
+	return settings.REDIS_PREFIX + ":" + key + ':' + identifier + ':' + field + ':' + value;
 }
 
 var redisKeyForUUID = function(uuid) {
-	return uuid;
+	return settings.REDIS_PREFIX + ":" + uuid;
 }
 
 module.exports = {

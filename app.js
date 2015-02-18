@@ -13,6 +13,7 @@ app.use(multer({
 }));
 
 var server = require( 'http' ).createServer( app ).listen( settings.PORT );
+console.log('settings.PORT:', settings.PORT);
 
 var routes = require( './routes/router' );
 routes.router( app );

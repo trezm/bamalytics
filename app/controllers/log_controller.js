@@ -65,7 +65,6 @@ module.exports.Controller = {
 
 module.exports.Routes = {
 	log: function(req, res) {
-		console.log('req.body', req.body);
 		if (validate({
 			logs: 'required'
 		}, req, res)) {
@@ -81,7 +80,6 @@ module.exports.Routes = {
 		if (validate({
 			query: 'required'
 		}, req, res)) {
-			console.log('req.query:', req.query);
 			module.exports.Controller.query(
 				req.query.query,
 				function(error, results) {

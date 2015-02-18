@@ -1,0 +1,22 @@
+<!doctype html>
+<!-- Specify the AngularJS app to use -->
+<html lang="en" ng-app="Bamalytics">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My AngularJS App</title>
+  <!-- The css is copied into dist/css/app.css by the copy task -->
+  <link rel="stylesheet" href="bootsolesjs.min.css"/>
+</head>
+<body>
+  <script src="app.js"></script>
+
+  <!-- put in the menu directive here -->
+  <menubar user="user"></menubar>
+
+  <!-- the yield for the view -->
+  <div class="flex-container" ng-view></div>
+  
+  <footer></footer>
+</body>
+</html>

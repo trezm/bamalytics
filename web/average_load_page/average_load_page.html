@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-md-offset-3 col-md-6">
+		<div class="row">
+			<input class="col-md-10 form-control" ng-model="queryString" placeholder="Query String"/><input type="button" class="col-md-offset-10 col-md-2 btn btn-success" value="Query" ng-click="submitQuery()"/>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-offset-3 col-md-6" ng-repeat="key in resultKeys">
+		<div class="row">
+			<div class="col-md-2 text-center">
+				{{ key }}
+			</div>
+			<div class="col-md-10 text-center">
+				{{ results[key] }}
+			</div>
+		</div>
+	</div>
+</div>

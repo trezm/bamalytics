@@ -5,10 +5,11 @@ var settings = {
     REDIS_PORT: 6379,
     REDIS_HOST: 'localhost',
     REDIS_MAX_ATTEMPTS: 5,
+    REDIS_PREFIX: 'Bamalytics',
 
     PORT: 3000,
 
-    LOG_LEVEL: 2,
+    LOG_LEVEL: 2
 }
 
 if ( typeof env == 'undefined' ) {
@@ -16,9 +17,9 @@ if ( typeof env == 'undefined' ) {
 }
 
 if ( env == 'dev' ) {
-
+	settings.PORT = 2999
 } else if ( env == 'test' ) {
-    LOG_LEVEL = 1;
+    settings.LOG_LEVEL = 1;
 }
 
 //console.log( "Using env:", env );

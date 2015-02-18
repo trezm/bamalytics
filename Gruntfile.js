@@ -48,6 +48,7 @@ module.exports = function(grunt) {
 		    files: {
 			'dist/bootsolesjs.min.css': [
 			    'node_modules/bootstrap/dist/css/bootstrap.min.css', // Bootstrap
+			    'node_modules/underscore/underscore-min.css',
 			    'web/**/*.css' // General CSS
 			]
 		    }

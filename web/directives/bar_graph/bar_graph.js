@@ -12,7 +12,8 @@ angular.module('Bamalytics.Directives')
 			},
 			controller: ['$scope', function($scope) {
 				$scope.svg;
-        var dateFormatter = d3.time.format('%Y-%m-%d-%M');
+//        var dateFormatter = d3.time.format('%Y-%m-%d-%M');
+        var dateFormatter = d3.time.format('%Y-%m-%d');
         var bucketizeData = function(data) {
           var bucketized = {};
           for (var i = 0; i < data.length; i++) {

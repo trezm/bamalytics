@@ -40,7 +40,7 @@ angular.module('Bamalytics.Directives')
 					var graphDiv = d3.select('#bar_graph');
 
           // Set the dimensions of the canvas / graph
-        	var margin = {top: 30, right: 20, bottom: 30, left: 50};
+        	var margin = {top: 30, right: 20, bottom: 100, left: 50};
         	var width = graphDiv[0][0].clientWidth - margin.left - margin.right;
         	var height = 270 - margin.top - margin.bottom;
 
@@ -105,7 +105,14 @@ angular.module('Bamalytics.Directives')
           svg.append("g")
           .attr("class", "x axis")
           .attr("transform", "translate(0," + height + ")")
-          .call(xAxis);
+          .call(xAxis)
+          .selectAll("text")  
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", function(d) {
+                return "rotate(-65)" 
+              });
 
           // Add the Y Axis
           svg.append("g")

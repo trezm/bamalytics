@@ -20,11 +20,13 @@ app.config(
 	function($routeProvider) {
 		$routeProvider.when('/average_load', {
 			templateUrl: 'average_load_page/average_load_page.html',
-			controller: 'AverageLoadController'
+			controller: 'AverageLoadController',
+			reloadOnSearch: false
 		});
 		$routeProvider.when('/time_graph', {
 			templateUrl: 'time_graph/time_graph_page.html',
-			controller: 'TimeGraphController'
+			controller: 'TimeGraphController',
+			reloadOnSearch: false			
 		});
 		$routeProvider.when('/', {
 			templateUrl: 'landing_page/landing_page.html'

@@ -1,7 +1,7 @@
 var _ = require('underscore/underscore-min.js');
 
 angular.module('Bamalytics.Controllers')
-	.controller('AverageLoadController', ['$scope', 'AverageLoadService', function($scope, AverageLoadService) {
+	.controller('AverageLoadController', ['$scope', '$location', 'AverageLoadService', function($scope, $location, AverageLoadService) {
 		var _retrieveValues = function(inputValues, field) {
 			if ($scope.targetField != '') {
 				return _.map(inputValues, function(input) {
@@ -40,6 +40,8 @@ angular.module('Bamalytics.Controllers')
 						}
 					}
 					$scope.resultKeys = Object.keys($scope.results);
+					$location.search('targetField', $scope.targetField);
+					$location.search('queryString', $scope.queryString);
 				}
 			});
 		}
@@ -50,8 +52,8 @@ angular.module('Bamalytics.Controllers')
 		$scope.yValues = [];
 		$scope.results = [];
 		$scope.resultKeys = [];
-		$scope.targetField = '';
-		$scope.queryString = '';
+		$scope.targetField = $location.search().targetField ? $location.search().targetField : '';
+		$scope.queryString = $location.search().queryString ? $location.search().queryString : '';
 		$scope.submitQuery = submitQuery;
 	}
 	]);

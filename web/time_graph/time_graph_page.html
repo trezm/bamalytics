@@ -1,23 +1,25 @@
-<div class="row">
-	<div class="col-md-offset-3 col-md-6">
-		<div class="row">
-			<input class="form-control" ng-model="queryString" placeholder="Query String"/>
-			<input class="form-control" ng-model="targetField" placeholder="Target Field"/>
-			<input type="button" class="btn btn-success" value="Query" ng-click="submitQuery()"/>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 col-md-offset-3 col-md-6">
+			<div class="row">
+				<input class="form-control" ng-model="queryString" placeholder="Query String"/>
+				<input class="form-control" ng-model="targetField" placeholder="Target Field"/>
+				<input type="button" class="btn btn-success" value="Query" ng-click="submitQuery()"/>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="row">
-	<bar-graph class="col-md-offset-3 col-md-6" id="graph" data="results" axis-x="xKey" axis-y="yKey"></bar-graph>
-</div>
-<div class="row">
-	<div class="col-md-offset-3 col-md-6" ng-repeat="key in resultKeys">
-		<div class="row">
-			<div class="col-md-2 text-center">
-				{{ key }}
-			</div>
-			<div class="col-md-10 text-center">
-				{{ results[key] }}
+	<div class="row">
+		<bar-graph class="col-sm-12 col-md-offset-3 col-md-6" id="graph" data="results" axis-x="xKey" axis-y="yKey"></bar-graph>
+	</div>
+	<div class="row">
+		<div class="col-sm-12 col-md-offset-3 col-md-6" ng-repeat="key in resultKeys">
+			<div class="row">
+				<div class="col-md-2 text-center">
+					{{ key }}
+				</div>
+				<div class="col-md-10 text-center">
+					{{ results[key] }}
+				</div>
 			</div>
 		</div>
 	</div>

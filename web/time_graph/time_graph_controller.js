@@ -1,7 +1,7 @@
 var _ = require('underscore/underscore-min.js');
 
 angular.module('Bamalytics.Controllers')
-	.controller('AverageLoadController', ['$scope', 'AverageLoadService', function($scope, AverageLoadService) {
+	.controller('TimeGraphController', ['$scope', 'ApiService', function($scope, ApiService) {
 		var _retrieveValues = function(inputValues, field) {
 			if ($scope.targetField != '') {
 				return _.map(inputValues, function(input) {
@@ -19,8 +19,7 @@ angular.module('Bamalytics.Controllers')
 		}
 
 		var submitQuery = function() {
-			console.log('making query');
-			AverageLoadService.query($scope.queryString, function(error, results) {
+			ApiService.query($scope.queryString, function(error, results) {
 				if (error) {
 					alert('ERROR:', error);
 				} else {

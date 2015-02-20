@@ -6,11 +6,13 @@ var app = angular
     .module('Bamalytics', [
 			    'ngRoute',
 			    'Bamalytics.Controllers',
-			    'Bamalytics.Services'
+			    'Bamalytics.Services',
+			    'Bamalytics.Directives'
 			    ]);
 
 angular.module('Bamalytics.Controllers', []);
 angular.module('Bamalytics.Services', []);
+angular.module('Bamalytics.Directives', []);
 
 app.config(
 	[
@@ -19,6 +21,10 @@ app.config(
 		$routeProvider.when('/average_load', {
 			templateUrl: 'average_load_page/average_load_page.html',
 			controller: 'AverageLoadController'
+		});
+		$routeProvider.when('/time_graph', {
+			templateUrl: 'time_graph/time_graph_page.html',
+			controller: 'TimeGraphController'
 		});
 		$routeProvider.when('/', {
 			templateUrl: 'landing_page/landing_page.html'
@@ -34,6 +40,10 @@ app.config(
 require('./menu_bar/menu_bar_controller')(app);
 require('./footer/footer_controller')(app);
 require('./average_load_page/average_load_controller');
+require('./time_graph/time_graph_controller');
 
 // Services
 require('./services');
+
+// Directives
+require('./directives');
